@@ -11,7 +11,7 @@ services:
       - ./logs:/var/log
       - ./mocks:/mocks
     ports:
-      - 8844:1111 # change on your port
+      - 8080:1111 # change on your port
     environment:
       MOCKER_MOCKS_ROOT_DIR: /mocks # depends on mounted volumes
       MOCKER_SERVER_PORT: 1111
@@ -23,7 +23,7 @@ services:
     image: filebrowser/filebrowser
     restart: unless-stopped
     ports:
-      - 8822:80 # change on your port
+      - 80:80 # change on your port
     volumes:
       - ./mocks:/srv # the same as in mocker
       - .filebrowser.db:/database.db
